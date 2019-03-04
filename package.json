@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node app.js",
     "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "author": "TCSCODER",
   "license": "none",
@@ -28,5 +31,19 @@
     "uuid": "^3.3.2",
     "winston": "^3.1.0",
     "tc-core-library-js": "appirio-tech/tc-core-library-js.git#v2.4.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "test",
+    "testRegex": ".spec.js$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
